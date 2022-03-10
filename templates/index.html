@@ -12,27 +12,72 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
+    <style>
+    * {
+      box-sizing: border-box;
+    }
 
-    <title>PyCompiler</title>
+    /* Create two equal columns that floats next to each other */
+    .column {
+      float: left;
+      width: 70%;
+      padding: 10px;
+      }
+      
+      .column1 {
+      float: left;
+      width: 30%;
+      padding: 10px;
+      }
+
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 600px) {
+      .column {
+        width: 100%;
+      }
+      .column1 {
+        width: 100%;
+      }
+    }
+    </style>
+
+    <title>Il compilatore Online di Python3 dedicato all'Intelligenza Artificiale</title>
   </head>
   <body style="font-family:Verdana;"><br>
-    <h1 style="text-align:center;">PyCompiler</h1><br>
+    <h1 style="text-align:center;">Il compilatore Online di Python3 dedicato all'Intelligenza Artificiale</h1><br>
 
     <form action="/runcode" method="post">
       {% csrf_token %}
-  <div class="form-group" style="margin-left:50px;margin-right:50px;">
-    <label for="codearea">Code Area</label>
+  
+
+
+ 
+
+    <div class="row">
+  <div class="column">
+    <div class="form-group" style="margin-left:50px;margin-right:50px;">
+    <label for="codearea">Qui scrivi il codice</label>
     <textarea type="text" class="form-control" id="codearea" name="codearea" rows="10" onkeydown="if(event.keyCode===9){var v=this.value,s=this.selectionStart,e=this.selectionEnd;this.value=v.substring(0, s)+'\t'+v.substring(e);this.selectionStart=this.selectionEnd=s+1;return false;}">{{ code }}</textarea>
   </div>
-
+  </div>
+  <div class="column1">
+    
   <div class="form-group" style="margin-left:50px;margin-right:50px;">
     <label for="output">Output</label>
     <textarea type="text" class="form-control" id="output" name="output" rows="4" disabled> {{ output }} </textarea>
   </div>
-
-  <button type="submit" class="btn btn-primary" style="margin-left:50px;">Submit</button>
+  </div>
+</div>
+      
+       <button type="submit" class="btn btn-primary" style="margin-left:50px;">Compila</button>
 </form>
-
 
   </body>
 </html>

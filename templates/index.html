@@ -62,16 +62,16 @@
 
     <div class="row">
   <div class="column">
-    <div class="form-group" style="margin-left:50px;margin-right:50px;">
+    <div class="form-group" style="margin-left:100px;margin-right:100px;">
     <label for="codearea">Qui scrivi il codice</label>
     <textarea type="text" class="form-control" id="codearea" name="codearea" rows="10" onkeydown="if(event.keyCode===9){var v=this.value,s=this.selectionStart,e=this.selectionEnd;this.value=v.substring(0, s)+'\t'+v.substring(e);this.selectionStart=this.selectionEnd=s+1;return false;}">{{ code }}</textarea>
   </div>
   </div>
   <div class="column1">
     
-  <div class="form-group" style="margin-left:50px;margin-right:50px;">
+  <div class="form-group" style="margin-left:10px;margin-right:100px;">
     <label for="output">Output</label>
-    <textarea type="text" class="form-control" id="output" name="output" rows="4" disabled> {{ output }} </textarea>
+    <textarea type="text" class="form-control" id="output" name="output" rows="10" disabled> {{ output }} </textarea>
   </div>
   </div>
 </div>
